@@ -1,0 +1,42 @@
+.container {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 7px;
+    height: 300px;
+  }
+  
+  .pantalla {
+    max-height: 250px; 
+    border: 2px solid gray;
+    padding: 5px;
+    overflow: hidden;
+    text-align: right;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .teclado {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .teclado > button {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+  }
+  
+  .teclado > button:nth-child(17) {
+    grid-column: span 2;
+  }
