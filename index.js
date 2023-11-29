@@ -22,21 +22,18 @@ teclas[0].addEventListener("click", () => {
 
 inicio();
 
-//TECLA 7
+// TECLAS NUMERICAS
 
 teclas[4].addEventListener("click", () => {
   cifras.push(7);
   pantalla.innerText = cifras.join("");
 });
 
-// TECLA 8
-
 teclas[5].addEventListener("click", () => {
   cifras.push(8);
   pantalla.innerText = cifras.join("");
 });
 
-// TECLA 9
 teclas[6].addEventListener("click", () => {
   cifras.push(9);
   pantalla.innerText = cifras.join("");
@@ -61,28 +58,39 @@ teclas[12].addEventListener("click", () => {
   cifras.push(1);
   pantalla.innerText = cifras.join("");
 });
+
 teclas[13].addEventListener("click", () => {
   cifras.push(2);
   pantalla.innerText = cifras.join("");
 });
+
 teclas[14].addEventListener("click", () => {
   cifras.push(3);
   pantalla.innerText = cifras.join("");
 });
+
 teclas[16].addEventListener("click", () => {
   cifras.push(0);
   pantalla.innerText = cifras.join("");
 });
 
-//SUMA
-teclas[15].addEventListener("click", () => {
-  resultado += Number(cifras.join(""));
+// HASTA ACA LAS TECLAS NUMERICAS
+
+// BOTONES C & CE
+
+teclas[1].addEventListener("click", () => {
   cifras = [];
-  operador = "+";
-  let resultado2 = Number(cifras.join(""));
-  resultado += resultado2;
-  pantalla.innerText = resultado;
+  operador = "";
+  pantalla.innerText = 0;
 });
+
+teclas[2].addEventListener("click", () => {
+  cifras = [];
+  operador = "";
+  resultado = 0;
+  pantalla.innerText = 0;
+});
+
 
 //IGUAL
 teclas[18].addEventListener("click", () => {
@@ -91,6 +99,51 @@ teclas[18].addEventListener("click", () => {
     resultado += resultado2;
     pantalla.innerText = resultado;
   }
+  else if(operador === "-"){
+    resultado -= resultado2;
+    pantalla.innerText = resultado;
+  }
+  else if(operador === "*"){
+    resultado *= resultado2;
+    pantalla.innerText = resultado;
+  }
+  else if(operador === "/"){
+    resultado /= resultado2;
+    pantalla.innerText = resultado;
+  }
   cifras = [];
   operador = "";
 });
+
+//SUMA
+teclas[15].addEventListener("click", () => {
+    resultado = Number(cifras.join(""));
+    cifras = [];
+    operador = "+";
+  });
+
+//RESTA
+
+teclas[11].addEventListener("click", () => {
+  resultado = Number(cifras.join(""));
+  cifras = [];
+  operador = "-";
+});
+
+//MULTIPLICACION
+
+teclas[7].addEventListener("click", () => {
+  resultado = Number(cifras.join(""));
+  cifras = [];
+  operador = "*";
+});
+
+// DIVISION
+
+teclas[3].addEventListener("click", () => {
+  resultado = Number(cifras.join(""));
+  cifras = [];
+  operador = "/";
+});
+
+
